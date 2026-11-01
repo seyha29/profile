@@ -2,8 +2,8 @@ import { useEffect, useRef, useState, type FormEvent } from 'react';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import {
   ArrowDown, ArrowDownRight, ArrowLeft, ArrowRight, ArrowUp, ArrowUpRight,
-  AtSign, Braces, Check, Code2, ExternalLink, Github, Globe2, Menu, Moon,
-  Send, Sparkles, Sun, Terminal, X,
+  AtSign, Braces, Check, Code2, ExternalLink, Github, Globe2, MapPin, Menu, Moon,
+  Phone, Send, Sparkles, Sun, Terminal, X,
 } from 'lucide-react';
 import portrait from '@assets/36d3f276ffceff26cf3643a9803cf5d2_0_1793552029709.webp';
 import logoMark from './assets/seyha-flame-mark.png';
@@ -184,7 +184,7 @@ function App() {
             <motion.div initial={reduceMotion ? false : { opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .8, delay: .15 }}>
               <div className="mb-8 flex items-center gap-3 font-mono text-[10px] uppercase tracking-[.23em] text-[#8d9aa9]">
                 <span className="relative flex h-2 w-2"><span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#58d6a0] opacity-60" /><span className="relative inline-flex h-2 w-2 rounded-full bg-[#58d6a0]" /></span>
-                {portfolio.location}
+                {portfolio.availability}
               </div>
               <p className="mb-4 font-mono text-[11px] tracking-[.24em] text-[#62cff8]">HELLO, I'M</p>
               <h1 className="font-display text-[clamp(4.3rem,11vw,9rem)] font-semibold leading-[.84] tracking-[-.09em]">
@@ -337,7 +337,7 @@ function App() {
                 <div className="mt-9 grid gap-4 border border-dashed border-[#58caff]/25 bg-[#0b1822]/65 p-5 sm:grid-cols-[1fr_auto] sm:items-center sm:p-6">
                   <div><p className="font-mono text-[9px] tracking-[.2em] text-[#65cbed]">{portfolio.githubUsername ? 'CONFIGURED PROFILE' : 'PROFILE PLACEHOLDER'}</p>
                     {portfolio.githubUsername ? <a href={githubUrl} target="_blank" rel="noreferrer" className="mt-2 inline-flex items-center gap-2 font-display text-lg text-white hover:text-[#54caff]" data-testid="link-github-profile">@{portfolio.githubUsername}<ArrowUpRight size={15} /></a> : <p className="mt-2 font-display text-lg text-white/70" data-testid="text-github-username-placeholder">@{portfolio.githubUsernamePlaceholder}</p>}
-                    <p className="mt-2 max-w-[520px] text-xs leading-6 text-white/45">No GitHub API is connected. Repository and contribution data stay empty until a real data source is configured.</p>
+                    <p className="mt-2 max-w-[520px] text-xs leading-6 text-white/45">The profile link is ready. Repository and contribution data remain empty until live GitHub data is connected.</p>
                   </div>
                   {githubUrl && <a href={githubUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 justify-self-start rounded-full border border-white/15 px-4 py-2.5 font-mono text-[9px] text-white/65 hover:border-[#55caff] hover:text-[#55caff]" data-testid="link-github-open">OPEN PROFILE <ExternalLink size={12} /></a>}
                 </div>
@@ -347,7 +347,7 @@ function App() {
                     <div className="grid gap-3">
                       {[1, 2].map((slot) => <div key={slot} className="flex min-h-[92px] items-center gap-4 border border-white/10 bg-[#0c121a]/70 p-4" data-testid={`github-empty-repository-${slot}`}>
                         <div className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-white/10 text-[#62cbed]"><Code2 size={15} /></div>
-                        <div><p className="font-mono text-[9px] tracking-widest text-white/55">REPOSITORY SLOT {String(slot).padStart(2, '0')}</p><p className="mt-1 text-[11px] text-white/35">Real repository details will appear after GitHub data is configured.</p></div>
+                        <div><p className="font-mono text-[9px] tracking-widest text-white/55">REPOSITORY SLOT {String(slot).padStart(2, '0')}</p><p className="mt-1 text-[11px] text-white/35">Real repository details will appear once live GitHub data is connected.</p></div>
                       </div>)}
                     </div>
                   </div>
@@ -357,7 +357,7 @@ function App() {
                       <div className="grid grid-cols-12 gap-1.5 sm:grid-cols-[repeat(16,minmax(0,1fr))] sm:gap-2" aria-label="Empty contribution activity visualization. Real activity will appear after GitHub is configured." data-testid="github-empty-activity">
                         {Array.from({ length: 48 }, (_, cell) => <span key={cell} className="aspect-square rounded-[2px] border border-white/[.035] bg-white/[.035]" />)}
                       </div>
-                      <p className="mt-4 text-[11px] leading-5 text-white/40">Real activity will appear after a GitHub username and data source are configured. No contribution history is represented here.</p>
+                      <p className="mt-4 text-[11px] leading-5 text-white/40">No contribution history is shown because live activity data is not connected.</p>
                     </div>
                   </div>
                 </div>
@@ -387,6 +387,8 @@ function App() {
                 <p className="mt-6 max-w-[390px] text-sm leading-7 text-white/50">Have a project, an idea, or a question? Leave a note. The form is ready for a real sending service when one is connected.</p>
                 <div className="mt-10 space-y-4">
                   {portfolio.email ? <a href={`mailto:${portfolio.email}`} className="flex items-center gap-3 text-sm text-[#89dcfb] hover:text-white" data-testid="link-email"><AtSign size={16} />{portfolio.email}<ArrowUpRight size={13} /></a> : <p className="flex items-center gap-3 text-xs text-white/45"><AtSign size={16} className="text-[#56c8f1]" />Email address not configured yet</p>}
+                  {portfolio.phone && <a href={`tel:${portfolio.phone.replace(/\s/g, '')}`} className="flex items-center gap-3 text-sm text-[#89dcfb] hover:text-white" data-testid="link-phone"><Phone size={16} />{portfolio.phone}<ArrowUpRight size={13} /></a>}
+                  {portfolio.location && <p className="flex items-center gap-3 text-sm text-white/55" data-testid="text-location"><MapPin size={16} className="text-[#56c8f1]" />{portfolio.location}</p>}
                   <div className="flex flex-wrap gap-4 pt-3">
                     {portfolio.socials.map((social) => social.href ? <a key={social.label} href={social.href} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 font-mono text-[9px] tracking-widest text-white/45 transition hover:text-[#61d1f5]" data-testid={`link-social-${social.label.toLowerCase()}`}>{social.label.toUpperCase()} <ArrowUpRight size={11} /></a> : <span key={social.label} className="font-mono text-[9px] tracking-widest text-white/25">{social.label.toUpperCase()} / ADD LINK</span>)}
                   </div>

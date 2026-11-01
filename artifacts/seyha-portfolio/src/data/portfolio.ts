@@ -1,8 +1,10 @@
 export const portfolio = {
   name: 'SEYHA',
   role: 'Frontend Developer / Creative Developer',
-  location: 'Available for thoughtful collaborations',
-  email: '',
+  availability: 'Available for thoughtful collaborations',
+  location: 'Kampong, Cambodia',
+  email: 'thanseyha2002@gmail.com',
+  phone: '+855 66675560',
   typewriterLines: [
     'I build modern websites.',
     'I create digital experiences.',
@@ -14,14 +16,14 @@ export const portfolio = {
   experienceYears: 'XX+',
   projectCount: 'XX+',
   statsPlaceholderNote: 'Editable placeholders — replace with your real experience and project counts.',
-  githubUsername: '',
+  githubUsername: 'seyha29',
   githubUsernamePlaceholder: 'Add GitHub username',
   githubApiConfigured: false,
   socials: [
-    { label: 'GitHub', username: '', href: '' },
-    { label: 'Facebook', username: '', href: '' },
-    { label: 'Telegram', username: '', href: '' },
-    { label: 'LinkedIn', username: '', href: '' },
+    { label: 'GitHub', username: 'seyha29', href: 'https://github.com/seyha29' },
+    { label: 'Facebook', username: '', href: 'https://www.facebook.com/share/1DhkUhdrsE/' },
+    { label: 'Telegram', username: 'thanseyha11', href: 'https://t.me/thanseyha11' },
+    { label: 'LinkedIn', username: 'thanseyha', href: 'https://www.linkedin.com/in/thanseyha?utm_source=share_via&utm_content=profile&utm_medium=member_android' },
   ],
   skills: [
     { category: 'Frontend', items: ['HTML5', 'CSS3', 'JavaScript', 'React', 'TypeScript', 'Tailwind CSS'] },
