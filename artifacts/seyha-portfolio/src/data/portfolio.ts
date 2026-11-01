@@ -1,5 +1,6 @@
 export const portfolio = {
   name: 'SEYHA',
+  displayName: 'Than Seyha',
   role: 'Frontend Developer / Creative Developer',
   availability: 'Available for thoughtful collaborations',
   location: 'Kampong, Cambodia',

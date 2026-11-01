@@ -1,0 +1,284 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
+.seyha-mockup,
+.seyha-centered-hero {
+  min-height: 100vh;
+  min-height: 100dvh;
+  color: #edf1f5;
+  background: #0d1018;
+  font-family: "Manrope", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.seyha-mockup .font-display,
+.seyha-centered-hero .font-display {
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.seyha-mockup .font-mono,
+.seyha-centered-hero .font-mono {
+  font-family: "DM Mono", monospace;
+}
+
+.seyha-mockup .caret {
+  animation: seyha-caret-blink 1s steps(2) infinite;
+}
+
+.seyha-mockup .line-draw {
+  background: linear-gradient(90deg, #43c8ff, rgba(67, 200, 255, 0.08));
+}
+
+@keyframes seyha-caret-blink {
+  50% { opacity: 0; }
+}
+
+.seyha-centered-hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 44px 24px 38px;
+  background:
+    radial-gradient(ellipse at 50% 20%, rgba(29, 69, 112, 0.18), transparent 42%),
+    #0d1018;
+}
+
+.seyha-centered-inner {
+  width: min(100%, 850px);
+  margin: auto;
+  text-align: center;
+}
+
+.seyha-centered-brand {
+  position: absolute;
+  top: 27px;
+  left: 30px;
+  color: rgba(237, 241, 245, 0.74);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+}
+
+.seyha-centered-availability {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 30px 0 22px;
+  color: #9eabb9;
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.seyha-centered-availability::before {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #58d6a0;
+  box-shadow: 0 0 0 4px rgba(88, 214, 160, 0.1);
+  content: "";
+}
+
+.seyha-portrait-orbit {
+  position: relative;
+  width: clamp(190px, 35vw, 272px);
+  aspect-ratio: 1;
+  margin: 0 auto;
+  isolation: isolate;
+}
+
+.seyha-portrait-orbit::before,
+.seyha-portrait-orbit::after {
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+  content: "";
+}
+
+.seyha-portrait-orbit::before {
+  inset: -16px;
+  border: 2px dashed rgba(99, 177, 227, 0.63);
+}
+
+.seyha-portrait-orbit::after {
+  inset: -27px;
+  border: 1px solid rgba(95, 151, 198, 0.22);
+}
+
+.seyha-portrait-frame {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border: 5px solid #438dc2;
+  border-radius: 50%;
+  background: #86b8dd;
+  box-shadow: 0 0 0 5px #111d2c, 0 0 0 7px rgba(93, 167, 216, 0.4);
+}
+
+.seyha-portrait-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 39%;
+}
+
+.seyha-centered-greeting {
+  margin: 51px 0 7px;
+  color: #e9edf3;
+  font-size: clamp(22px, 4vw, 34px);
+  font-weight: 400;
+  letter-spacing: -0.045em;
+}
+
+.seyha-centered-greeting strong {
+  color: #ff6671;
+  font-weight: 700;
+}
+
+.seyha-centered-headline {
+  margin: 0;
+  color: #f1f2f5;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(38px, 8vw, 74px);
+  font-weight: 700;
+  letter-spacing: -0.075em;
+  line-height: 1.05;
+}
+
+.seyha-centered-headline span {
+  color: #f45d68;
+}
+
+.seyha-centered-role {
+  margin: 15px 0 0;
+  color: #d0d7df;
+  font-size: clamp(13px, 2vw, 16px);
+  font-weight: 600;
+  letter-spacing: 0.015em;
+}
+
+.seyha-centered-intro {
+  max-width: 640px;
+  margin: 17px auto 0;
+  color: #c0c9d4;
+  font-size: clamp(15px, 2.15vw, 19px);
+  line-height: 1.8;
+}
+
+.seyha-centered-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.seyha-centered-actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 42px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-decoration: none;
+  transition: color 180ms ease, background-color 180ms ease, border-color 180ms ease, transform 180ms ease;
+}
+
+.seyha-centered-actions a:hover {
+  transform: translateY(-2px);
+}
+
+.seyha-centered-primary {
+  padding: 0 20px;
+  border: 1px solid rgba(88, 202, 255, 0.48);
+  color: #c8efff;
+  background: #102638;
+}
+
+.seyha-centered-primary:hover {
+  border-color: #58caff;
+  background: #143a52;
+}
+
+.seyha-centered-secondary {
+  padding: 0 16px;
+  color: rgba(237, 241, 245, 0.78);
+}
+
+.seyha-centered-secondary:hover {
+  color: #74d9ff;
+}
+
+.seyha-centered-socials {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 24px;
+}
+
+.seyha-centered-socials a {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border: 1px solid rgba(70, 118, 166, 0.18);
+  border-radius: 50%;
+  color: #ff6470;
+  background: #101a2b;
+  transition: transform 180ms ease, border-color 180ms ease, color 180ms ease, background-color 180ms ease;
+}
+
+.seyha-centered-socials a:hover {
+  transform: translateY(-3px);
+  border-color: rgba(105, 184, 236, 0.65);
+  color: #ffd1d4;
+  background: #16243a;
+}
+
+.seyha-centered-socials svg {
+  width: 19px;
+  height: 19px;
+}
+
+@media (max-width: 560px) {
+  .seyha-centered-hero {
+    padding: 54px 20px 30px;
+  }
+
+  .seyha-centered-brand {
+    top: 18px;
+    left: 20px;
+  }
+
+  .seyha-centered-availability {
+    margin-top: 27px;
+    font-size: 9px;
+  }
+
+  .seyha-centered-greeting {
+    margin-top: 43px;
+  }
+
+  .seyha-centered-intro {
+    max-width: 480px;
+    line-height: 1.62;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .seyha-mockup .caret {
+    animation: none;
+  }
+
+  .seyha-centered-actions a,
+  .seyha-centered-socials a {
+    transition: none;
+  }
+}
