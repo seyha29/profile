@@ -3,9 +3,10 @@ import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import {
   ArrowDown, ArrowDownRight, ArrowLeft, ArrowRight, ArrowUp, ArrowUpRight,
   AtSign, Braces, Check, Code2, ExternalLink, Github, Globe2, Menu, Moon,
-  MousePointer2, Send, Sparkles, Sun, Terminal, X,
+  Send, Sparkles, Sun, Terminal, X,
 } from 'lucide-react';
 import portrait from '@assets/36d3f276ffceff26cf3643a9803cf5d2_0_1793552029709.webp';
+import logoMark from './assets/seyha-flame-mark.png';
 import { portfolio } from './data/portfolio';
 
 const navItems = [
@@ -154,7 +155,9 @@ function App() {
       <header className="fixed inset-x-0 top-0 z-50 border-b border-white/[.07] bg-[#0d1018]/80 backdrop-blur-xl">
         <nav className="mx-auto flex h-[76px] max-w-[1320px] items-center justify-between px-5 md:px-10" aria-label="Main navigation">
           <a href="#home" className="group flex items-center gap-3" data-testid="link-home">
-            <span className="grid h-9 w-9 place-items-center border border-[#3abefa]/40 bg-[#153148]/50 font-display text-sm font-bold text-[#65d5ff]">S.</span>
+            <span className="grid h-9 w-9 shrink-0 place-items-center border border-[#3abefa]/40 bg-[#153148]/50">
+              <img src={logoMark} alt="" aria-hidden="true" className="h-[31px] w-[24px] object-contain" />
+            </span>
             <span className="font-display text-sm font-bold tracking-[.23em]">SEYHA<span className="ml-2 font-mono text-[10px] font-normal tracking-normal text-white/40">/ DEV</span></span>
           </a>
           <div className="hidden items-center gap-7 lg:flex">
@@ -217,13 +220,7 @@ function App() {
                 </svg>
               </div>
               <div className="relative z-10 aspect-[.88] overflow-hidden rounded-[46%_46%_14px_14px] border border-white/10 bg-[#183d59]">
-                <img src={portrait} alt="Portrait of SEYHA" className="h-full w-full object-cover object-[center_39%] mix-blend-luminosity opacity-90" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0d1018]/70 via-transparent to-[#126c9d]/10" />
-                <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(22,170,238,.13),transparent_38%,rgba(5,13,24,.22))]" />
-                <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between">
-                  <div><span className="font-mono text-[9px] tracking-[.2em] text-[#8fdfff]">THE PERSON BEHIND THE PIXELS</span><p className="mt-1 font-display text-2xl font-semibold">SEYHA</p></div>
-                  <div className="grid h-11 w-11 place-items-center rounded-full border border-white/25 bg-black/20 backdrop-blur"><MousePointer2 size={17} className="text-[#8ddfff]" /></div>
-                </div>
+                <img src={portrait} alt="Portrait of SEYHA" className="h-full w-full object-cover object-[center_39%]" />
               </div>
               <div className="absolute -left-7 top-[18%] hidden -rotate-90 font-mono text-[9px] tracking-[.28em] text-white/40 sm:block">CREATIVE DEVELOPMENT / 001</div>
               <div className="absolute -right-4 top-10 flex items-center gap-2 rounded-full border border-white/10 bg-[#111722]/90 px-4 py-2.5 font-mono text-[9px] tracking-widest text-white/70 backdrop-blur"><span className="h-1.5 w-1.5 rounded-full bg-[#4acaff]" /> FRONTEND / CREATIVE</div>
