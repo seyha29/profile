@@ -19,6 +19,14 @@
   text-align: center;
 }
 
+.portfolio-hero-desktop {
+  display: none;
+}
+
+.portfolio-hero-progress {
+  display: none;
+}
+
 .portfolio-portrait-orbit {
   position: relative;
   width: clamp(210px, 28vw, 272px);
@@ -296,6 +304,43 @@
   .portfolio-hero-intro {
     max-width: 480px;
     line-height: 1.62;
+  }
+}
+
+@media (min-width: 1024px) {
+  .portfolio-hero {
+    min-height: 850px;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 128px 40px 78px;
+  }
+
+  .portfolio-hero-inner {
+    width: 100%;
+    max-width: 1320px;
+    text-align: left;
+  }
+
+  .portfolio-hero-mobile {
+    display: none;
+  }
+
+  .portfolio-hero-desktop {
+    display: grid;
+    width: 100%;
+    grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+    align-items: center;
+    gap: 48px;
+  }
+
+  .portfolio-hero-progress {
+    position: absolute;
+    right: 40px;
+    bottom: 0;
+    left: 40px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
   }
 }
 

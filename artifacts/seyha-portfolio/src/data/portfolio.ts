@@ -1,7 +1,7 @@
 export const portfolio = {
   name: 'SEYHA',
-  displayName: 'Than Seyha',
-  role: 'Frontend Developer / Creative Developer',
+  displayName: 'SEYHA',
+  role: 'Full Stack Developer',
   availability: 'Available for thoughtful collaborations',
   location: 'Kampong, Cambodia',
   email: 'thanseyha2002@gmail.com',
